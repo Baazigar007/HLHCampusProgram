@@ -1,0 +1,119 @@
+.loginbody{
+    display: flex;
+    height: 100vh;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-between; */
+    background-image: linear-gradient(#E48EC3 20%, #FAD447 80%);
+    /* background-color: #E48EC3; */
+    padding: 0;
+    margin: 0;
+}
+
+.logotext{
+    margin-top: 1rem;
+}
+.loginfields{
+    height: 72vh;
+    width: 100vw;
+    background-color: #FAD447;
+    border-radius: 3rem 3rem 0 0;
+    /* margin-bottom: -5rem; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+/* .campus-text{
+    height: 50vh;
+    width: 100vw;
+    background-color: #7FC9EF;
+    border-radius: 3rem 3rem 0 0;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: serif;
+} */
+
+input{
+    margin-left: 1rem;
+    width: 18rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    border:1px solid black;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 18px;
+    background-color: #7FC9EF;
+}
+
+.loginbtn{
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+button{
+    border-radius: 1.4rem;
+    border: 1px solid black;
+    background-color: #E48EC3;
+}
+
+@media screen and (max-width: 600px) {
+    .input{
+        width: 15rem;
+        height: 2rem;
+        border: none;
+        border-radius: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 14px;
+    }
+
+    .p-image{
+        margin-top: -15rem;
+       
+    }
+    .p-info{
+        margin-top:-2rem;
+    }
+   
+}
+
+
+/* Menu Styling*/
+.menu{
+    margin-top: 2rem;
+    height: 3rem;
+    display: -webkit-box;
+    margin-left: auto;
+    margin-right: 2rem;
+}
+
+/* Profile image */
+.p-image{
+   top:0px;
+
+}
+/*headings*/
+.p-head{
+font-size: 20px;
+font-weight: 500;
+line-height: 22px;
+margin-left: 1rem;
+margin-top: 10px;
+margin-bottom: 0px;
+}
