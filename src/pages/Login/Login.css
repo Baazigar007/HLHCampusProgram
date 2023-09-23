@@ -45,7 +45,7 @@
     font-family: serif;
 }
 
-input{
+.login-input{
     width: 20rem;
     height: 4rem;
     border: none;
@@ -63,14 +63,19 @@ input{
     padding-right: 2rem;
 }
 
-button{
+.loginbtn{
     border-radius: 1rem;
     border: 1px solid black;
     background-color: white;
 }
 
+.loginbtn-button{
+    background-color: transparent;
+    border: none;
+}
+
 @media screen and (max-width: 600px) {
-    input{
+    .login-input{
         width: 15rem;
         height: 3rem;
         border: none;

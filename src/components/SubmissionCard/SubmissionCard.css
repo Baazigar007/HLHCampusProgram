@@ -1,0 +1,30 @@
+.card-parent{
+    display: flex;
+   justify-content: space-between;
+   width: 90vw;
+    margin-top: 1rem;
+}
+
+.card-left{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-right{
+    width: calc(90vw - 7rem);
+    height: max-content;
+    background-color: #7FC9EF;
+   padding-left: 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border: 1px solid black;
+   border-radius: 1rem;
+   padding-right: 0.5rem;
+   line-height: 10px;
+}
+
+.ambassador-name{
+    margin-top: -0.2rem;
+}
