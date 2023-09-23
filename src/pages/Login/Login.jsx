@@ -18,7 +18,7 @@ export default function LoginPage() {
                 <input type="password" className="login-input" placeholder="Password" />
                 <button className="loginbtn-button"><div className="loginbtn"><p>Sign In</p><img src={handblue} alt="" /></div></button>
             </div>
-            
+          
         </div>
       </div>
     </>
