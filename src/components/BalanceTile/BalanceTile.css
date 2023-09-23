@@ -1,0 +1,39 @@
+.tile-box{
+    display: flex;
+   justify-content: center;
+   width: 100vw;
+   margin-top: 1rem;
+}
+
+.tile-right{
+    width: 90%;
+    height: max-content;
+    background-color: #7FC9EF;
+   padding-left: 0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border: 1px solid black;
+   border-radius: 1rem;
+   padding-right: 0.5rem;
+   line-height: 10px;
+}
+
+.tile-info-head{
+    margin-top: 1rem;
+    width: fit-content;
+    background-color: white;
+    padding: 1rem;
+    font-weight: 500;
+    
+    border-radius: 2rem;
+    border: solid black 1px;
+}
+/* 
+@media screen and (max-width: 600px) {
+    .tile-info-head{
+        
+    }
+
+} */
+    

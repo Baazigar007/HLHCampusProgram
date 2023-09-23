@@ -8,14 +8,16 @@ import { Link } from "react-router-dom";
 export default function ProfilePage(){
     return(
         <>
-       <div className="loginbody">
+       <div className="profilebody">
     
       <img className="menu" src={logo} alt="" />
-   
+      <div className='sb-head'>
+                    <h2>Your Profile</h2>
+                   </div>
         
-        <div className="loginbottom">
+        <div className="profilebottom">
            
-            <div className="loginfields">
+            <div className="profilefields">
                    <div className="p-image"> 
                           <img src={avatar} alt ="pfp"/>
                    </div>
@@ -31,7 +33,7 @@ export default function ProfilePage(){
                     <h4 className="p-head">Soronity</h4>
                     <input type="name " value="Tech" ></input>
                    </div>
-                <button><div className="loginbtn"><img src={handblue} alt="" /><p>Save</p></div></button>
+                <button><div className="savebtn"><img src={handblue} alt="" /><p>Save</p></div></button>
             </div>
             
         </div>
