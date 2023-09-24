@@ -13,6 +13,7 @@ const SubmitTask = () =>{
             <input type="file" accept="image/*" multiple max="10" />
             <p>{"Add comment (optional)"}</p>
             <input type="text" placeholder="Type your comment here"/>
+            <button className="submit-task-btn">Submit</button>
             </div>
         </div>
         </>
