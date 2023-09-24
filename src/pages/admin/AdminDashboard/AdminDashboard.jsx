@@ -1,13 +1,13 @@
 import "./AdminDashboard.css";
-import logo from "../../../images/logo.svg";
 import SubmissionCard from "../../../components/SubmissionCard/SubmissionCard";
+import logo from "../../../images/logo.svg"
 const AdminDashboard = () => {
   const submissions_list = [1,2];
   return (
     <>
       <div className="admin-dash-parent">
         <div className="topblue">
-          <img src={logo} alt="" className="logo-right" />
+        <img className="logo-right" src={logo} alt="" />
 
           <p className="setfilter">Set Filters:</p>
 

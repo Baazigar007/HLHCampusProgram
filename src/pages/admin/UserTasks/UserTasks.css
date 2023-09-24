@@ -1,0 +1,19 @@
+.user-task-header{
+    display: flex;
+    justify-content: space-between;
+    height: 12rem;
+    width: 100%;
+    background-color: #E48EC3;
+    border-radius: 0 0 3rem 3rem;
+    /* display: flex; */
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.user-task-header-l{
+    margin-left: 1rem;
+}
+
+.user-task-header-r{
+    margin-right: 1rem;
+}

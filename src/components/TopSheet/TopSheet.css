@@ -1,0 +1,29 @@
+
+
+.sheetbody{
+    background-color: #FAD447;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sheet-tile{
+    margin-top: 2rem;
+    width: 90vw;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    background-color: #7FC9EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-family: serif;
+}
+
+.sheetcontent{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

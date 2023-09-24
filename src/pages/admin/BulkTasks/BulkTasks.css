@@ -1,0 +1,45 @@
+.add-bulk-task-btn{
+background-color: #E48EC3;
+border: 1px solid black;
+width: 90vw;
+border-radius: 1rem;
+margin-bottom: 1rem;
+}
+
+.add-bulk-task-btn-img{
+    height: 3rem;
+}
+
+.bulk-task-body{
+    background-color:#FAD447;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.bulk-task-header{
+    height: 10rem;
+    width: 100%;
+    background-color: #E48EC3;
+    border-radius: 0 0 3rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-a-bulk-task{
+    margin: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.tasks-list{
+    height: calc(100vh - 10rem);
+    overflow: scroll;
+    overflow-x: hidden;
+}

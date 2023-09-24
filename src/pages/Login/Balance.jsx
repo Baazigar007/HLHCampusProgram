@@ -1,7 +1,7 @@
 import './Balance.css';
-import logo from '../../images/logo.svg';
 import avatar from '../../images/avatar.svg';
 import BalanceTile from '../../components/BalanceTile/BalanceTile';
+import TopSheet from '../../components/TopSheet/TopSheet';
 
 
 const Balance = () =>{
@@ -9,7 +9,7 @@ const Balance = () =>{
     return(
         <>
           <div className='balancebody'>
-        <img className="menu" src={logo} alt="" />
+          <TopSheet/>
          <div className='b-head'>
                     <h2>Your Balance</h2>
                    </div>

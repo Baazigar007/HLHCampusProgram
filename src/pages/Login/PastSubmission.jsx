@@ -1,14 +1,14 @@
 import './PastSubmission.css';
-import logo from '../../images/logo.svg';
 import avatar from '../../images/avatar.svg';
 import PastSubmissionTile from '../../components/PastSubmissionTile/PastSubmissionTile';
+import TopSheet from '../../components/TopSheet/TopSheet';
 
 const PastSubmission = () => {
     let list =[1,2,3,4];
     return(
         <>
         <div className='submitbody'>
-        <img className="menu" src={logo} alt="" />
+        <TopSheet/>
          <div className='sb-head'>
                     <h2>Past Submission</h2>
                    </div>
