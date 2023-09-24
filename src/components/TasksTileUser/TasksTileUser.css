@@ -1,0 +1,15 @@
+.taskstilebody{
+    width: calc(90vw - 30px);
+    height: 8rem;
+    border-radius: 1rem;
+    background-color: #7FC9EF;
+    border: 1px solid black;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}

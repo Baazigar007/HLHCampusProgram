@@ -1,0 +1,25 @@
+.submit-task-header{
+    height: 8rem;
+    background-color: #E48EC3;
+    display: flex;
+    border-radius: 0 0 3rem 3rem;
+    font-size: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.submit-task-body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FAD447;
+    height: 100vh;
+}
+
+.add-files{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

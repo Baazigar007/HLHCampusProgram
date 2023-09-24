@@ -39,7 +39,7 @@ const TaskDetails = () => {
                 Status:
               </label>
               <br />
-              <select name="status" id="status">
+              <select name="status" className="taskdetails-select" id="status">
                 <option value="all">All</option>
                 <option value="pending">Pending</option>
                 <option value="completed">Completed</option>
@@ -50,7 +50,7 @@ const TaskDetails = () => {
                 Amount:
               </label>
               <br />
-              <select name="status" id="status">
+              <select name="status" className="taskdetails-select" id="status">
                 <option value="all">All</option>
                 <option value="pending">Pending</option>
                 <option value="completed">Completed</option>
