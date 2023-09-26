@@ -1,0 +1,33 @@
+.loading-page{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+background-color: #E48EC3 ;
+}
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 80%;
+    border-top: 6px solid #FAD447;
+    border-left: 6px solid black;
+    border-bottom: 6px solid #7FC9EF;
+    border-right: 6px solid transparent;
+    transition: 1s;
+    transform: rotate(0deg);
+    animation: rotate 1s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    20% {
+        transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

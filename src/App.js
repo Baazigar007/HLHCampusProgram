@@ -10,7 +10,9 @@ import UserTasks from './pages/admin/UserTasks/UserTasks';
 import TaskDetails from './pages/admin/TaskDetails/TaskDetails';
 import SubmitTask from './pages/Login/SubmitTask';
 
-function App() {
+
+
+const App = () =>  {
   return (
     <BrowserRouter>
     <Routes>
@@ -30,3 +32,4 @@ function App() {
 }
 
 export default App;
+

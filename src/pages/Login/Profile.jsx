@@ -2,9 +2,17 @@ import "./Profile.css";
 import avatar from "../../images/avatar.svg";
 import handblue from "../../images/hand-blue.svg";
 import TopSheet from "../../components/TopSheet/TopSheet";
+import logoutUser from "../../backend/logout";
+import { useNavigate } from "react-router-dom";
 
 // PROFILE BODY
 export default function ProfilePage() {
+  const navigate = useNavigate()
+  async function logout(){
+    logoutUser().then((_)=>{
+      navigate('/')
+    })
+  }
   return (
     <>
       <div className="profilebody">
@@ -12,12 +20,12 @@ export default function ProfilePage() {
         <div className="sb-head">
           <h2>Your Profile</h2>
         </div>
-
         <div className="profilebottom">
           <div className="profilefields">
             <div className="p-image">
               <img src={avatar} alt="pfp" />
             </div>
+            <button onClick={()=>{logout()}}>logout</button>
             <div className="p-info">
               <h4 className="p-head">Name</h4>
               <input type="name " value="John Dee"></input>

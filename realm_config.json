@@ -1,0 +1,8 @@
+{
+    "appId": "application-0-hnblo",
+    "authProviders": {
+      "anonymous": {
+        "enabled": true
+      }
+    }
+  }
