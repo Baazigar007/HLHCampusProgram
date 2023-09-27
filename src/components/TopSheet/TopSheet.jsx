@@ -4,8 +4,14 @@ import { useState } from "react";
 import logo from "../../images/logo.svg"
 import avatar from "../../images/avatar.svg"
 import { useNavigate } from "react-router-dom";
+import logoutUser from "../../backend/logout";
 
 const TopSheet = () => {
+  async function logout(){
+    logoutUser().then((_)=>{
+      navigate('/')
+    })
+  }
     const navigate = useNavigate();
   const [isOpen, setOpen] = useState(false);
   return (
@@ -28,6 +34,13 @@ const TopSheet = () => {
             <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/balance')}}>
                 <p>Balance</p>
             </div>
+
+            <div className="sheet-tile" onClick={()=>{logout()}}>
+                <p>logOut</p>
+            </div>
+
+
+   
 
           </div>
           }</Sheet.Content>

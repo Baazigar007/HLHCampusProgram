@@ -1,6 +1,26 @@
+import { useNavigate } from "react-router-dom";
 import TasksTileUser from "../../components/TasksTileUser/TasksTileUser";
 import "./SubmitTask.css"
+import { useEffect } from "react";
+import loginStatus from "../../backend/loginStatus";
 const SubmitTask = () =>{
+    const navigate = useNavigate()
+    useEffect(() => {
+      
+      async function checkLogin() {
+        var x = await loginStatus();
+        console.log("checking", x);
+        if (x.isLogged === true) {
+          if(x.isAdmin){
+            navigate("/admin");
+          }
+        }
+        else{
+          navigate('/')
+        }
+      }
+         checkLogin();
+      }, [navigate]);
     return (
         <>
         <div className="submit-task-body">

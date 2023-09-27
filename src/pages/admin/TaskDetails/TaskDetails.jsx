@@ -2,9 +2,24 @@ import "./TaskDetails.css";
 import avatar from "../../../images/avatar.svg";
 import handblue from "../../../images/hand-blue.svg"
 import filesvg from "../../../images/file-text.svg"
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import loginStatus from "../../../backend/loginStatus";
 
 const TaskDetails = () => {
     const files= [1,2,3,4,5,7,8,9,0];
+    const navigate = useNavigate()
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if(!x.isAdmin){
+        navigate('/')
+      }
+    }
+       checkLogin();
+    }, [navigate]);
   return (
     <>
       <div className="task-details-body">

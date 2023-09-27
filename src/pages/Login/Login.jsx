@@ -26,7 +26,6 @@ export default function LoginPage() {
       login(email, pwd)
         .then((_) => {
           console.log("user logged in");
-          alert("logged in");
           setLoading(false);
           checkLogin();
         })

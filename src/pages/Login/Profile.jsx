@@ -2,17 +2,30 @@ import "./Profile.css";
 import avatar from "../../images/avatar.svg";
 import handblue from "../../images/hand-blue.svg";
 import TopSheet from "../../components/TopSheet/TopSheet";
-import logoutUser from "../../backend/logout";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import loginStatus from "../../backend/loginStatus";
 
 // PROFILE BODY
 export default function ProfilePage() {
   const navigate = useNavigate()
-  async function logout(){
-    logoutUser().then((_)=>{
-      navigate('/')
-    })
-  }
+
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if (x.isLogged === true) {
+        if(x.isAdmin){
+          navigate("/admin");
+        }
+      }
+      else{
+        navigate('/')
+      }
+    }
+       checkLogin();
+    }, [navigate]);
   return (
     <>
       <div className="profilebody">
@@ -25,7 +38,6 @@ export default function ProfilePage() {
             <div className="p-image">
               <img src={avatar} alt="pfp" />
             </div>
-            <button onClick={()=>{logout()}}>logout</button>
             <div className="p-info">
               <h4 className="p-head">Name</h4>
               <input type="name " value="John Dee"></input>

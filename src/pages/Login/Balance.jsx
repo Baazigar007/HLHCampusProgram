@@ -2,10 +2,30 @@ import './Balance.css';
 import avatar from '../../images/avatar.svg';
 import BalanceTile from '../../components/BalanceTile/BalanceTile';
 import TopSheet from '../../components/TopSheet/TopSheet';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import loginStatus from '../../backend/loginStatus';
 
 
 const Balance = () =>{
     const wallet =[1,2];
+    const navigate = useNavigate()
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if (x.isLogged === true) {
+        if(x.isAdmin){
+          navigate("/admin");
+        }
+      }
+      else{
+        navigate('/')
+      }
+    }
+       checkLogin();
+    }, [navigate]);
     return(
         <>
           <div className='balancebody'>

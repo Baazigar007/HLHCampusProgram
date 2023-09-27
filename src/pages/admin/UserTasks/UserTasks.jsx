@@ -3,9 +3,24 @@ import logo from "../../../images/logo.svg"
 import add from "../../../images/add_icon.svg"
 import "./UserTasks.css"
 import edit from "../../../images/pencil.svg";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import loginStatus from "../../../backend/loginStatus";
 
 const UserTasks = () =>{
     const tasks = [1,2,2,2,2,2,34,4]
+    const navigate = useNavigate()
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if(!x.isAdmin){
+        navigate('/')
+      }
+    }
+       checkLogin();
+    }, [navigate]);
     return (
         <>
                     <div className="bulk-task-body">

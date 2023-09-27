@@ -47,6 +47,7 @@
 }
 
 .add-task-button{
+    margin-top: 1rem;
     background-color: #FAD447;
     width: 80vw;
     border: 1px solid black;

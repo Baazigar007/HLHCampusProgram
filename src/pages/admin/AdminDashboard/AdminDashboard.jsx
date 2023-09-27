@@ -1,11 +1,36 @@
 import "./AdminDashboard.css";
 import SubmissionCard from "../../../components/SubmissionCard/SubmissionCard";
 import logo from "../../../images/logo.svg"
+import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import loginStatus from "../../../backend/loginStatus";
+import logoutUser from "../../../backend/logout";
+import Loading from "../../../components/Loading/Loading";
 const AdminDashboard = () => {
+  const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  async function logoutAdmin(){
+    setLoading(true);
+    logoutUser().then(()=>{
+      navigate('/')
+    })
+  }
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if(!x.isAdmin){
+        navigate('/')
+      }
+    }
+       checkLogin();
+    }, [navigate]);
   const submissions_list = [1,2];
   return (
     <>
-      <div className="admin-dash-parent">
+      {
+        loading?<Loading/>:<div className="admin-dash-parent">
         <div className="topblue">
         <img className="logo-right" src={logo} alt="" />
 
@@ -81,8 +106,10 @@ const AdminDashboard = () => {
           })
           }
         </div>
+        <button className="add-task-button" onClick={()=>{logoutAdmin()}}>LogOut</button>
         <button className="add-task-button">View/Add Bulk Tasks</button>
       </div>
+      }
     </>
   );
 };
