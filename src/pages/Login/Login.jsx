@@ -46,7 +46,7 @@ export default function LoginPage() {
         navigate("/admin");
       }
       else{
-        navigate("/profile");
+        navigate("/home");
       }
     }
   }
@@ -62,7 +62,7 @@ export default function LoginPage() {
         navigate("/admin");
       }
       else{
-        navigate("/profile");
+        navigate("/home");
       }
     }
   }

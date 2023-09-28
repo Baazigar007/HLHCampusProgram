@@ -1,0 +1,75 @@
+/* PAST SUBMISSION STYLING */
+
+
+/* .submitbody{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+      to top,
+    
+      #FAD447 0%,
+      #FAD447 75%,
+      #E48EC3 75%,
+      #E48EC3 100%
+    );
+    
+} */
+
+.homebody{
+    display: flex;
+    height: 50vh;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    background-color: #E48EC3;
+    padding: 0;
+    margin: 0;
+}
+
+
+.h-bottom{
+    height: 75%;
+    width: 100vw;
+    background-color: #FAD447;
+    border-radius: 3rem 3rem 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-direction: column;
+}
+
+.tasks{
+    margin-top: 2rem;
+}
+.p-image{
+    position: absolute;
+    top: -130px;
+   
+}
+.h-head{
+    background-color: white;
+    border-radius: 2rem;
+   padding-left: 1.5rem;
+   padding-right: 1.5rem;
+   position: absolute;
+   top: 30px;
+}
+/* @media screen and (max-width: 600px) {
+    .p-head{
+        position: relative;
+        top: 5px;
+        
+    }
+} */
+
+.u-head{
+    font-size: 20px;
+    font-weight: 800;
+    position: relative;
+    top: 65px;
+    
+}
