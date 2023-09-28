@@ -9,6 +9,7 @@ import Balance from './pages/Login/Balance';
 import UserTasks from './pages/admin/UserTasks/UserTasks';
 import TaskDetails from './pages/admin/TaskDetails/TaskDetails';
 import SubmitTask from './pages/Login/SubmitTask';
+import CreateUser from './pages/admin/CreateUser/CreateUser';
 
 
 
@@ -26,6 +27,7 @@ const App = () =>  {
       <Route path="/admin/bulktasks" element={<BulkTasks/>}/>
       <Route path="/admin/usertasks" element={<UserTasks/>} />
       <Route path="/admin/taskdetails" element={<TaskDetails/>} />
+      <Route path="/admin/createuser" element={<CreateUser/>}/>
     </Routes>
 </BrowserRouter>
   );
