@@ -10,6 +10,7 @@ import UserTasks from './pages/admin/UserTasks/UserTasks';
 import TaskDetails from './pages/admin/TaskDetails/TaskDetails';
 import SubmitTask from './pages/Login/SubmitTask';
 import CreateUser from './pages/admin/CreateUser/CreateUser';
+import HomePage from './pages/Login/Home';
 
 
 
@@ -18,6 +19,7 @@ const App = () =>  {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<LoginPage/>}/>
+      <Route path="/home" element ={<HomePage/>} />
       <Route path="/profile" element={<ProfilePage/>} />
       <Route path="/pastsubmission" element={<PastSubmission/>} />
       <Route path="/balance" element={<Balance/>} />
