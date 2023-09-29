@@ -1,5 +1,9 @@
 import realm_app from "./UserContext"
 import * as Realm from "realm-web"
+
+// Assuming you have a reference to your MongoDB collection
+const usersCollection = realm_app.currentUser.mongoClient('mongodb-atlas').db('userinfo').collection('userdata');
+
 async function createUserFromData(userObject){
      realm_app.emailPasswordAuth.registerUser({
         email: userObject.email,
@@ -7,8 +11,17 @@ async function createUserFromData(userObject){
     }).then((val)=>console.log("val is ", val)).catch((err)=>{
         alert(err)
     })
- userObject._id = "task_id";
+//  userObject._id = "task_id";
     console.log(userObject);
+
+    usersCollection.insertOne(userObject)
+  .then(() => {
+    console.log('User data inserted into MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error inserting user data:', error);
+  });
+
     // console.log(register)
     // const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     // let task_id = ""

@@ -23,7 +23,8 @@ const CreateUser = () =>{
                 "password": pwd,
                 "phone": phone,
                 "college": college,
-                "sorority": sorority
+                "sorority": sorority,
+                "isAdmin" : false
             }
             createUserFromData(userObject);
         }
