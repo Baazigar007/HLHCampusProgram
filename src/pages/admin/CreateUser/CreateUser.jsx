@@ -10,12 +10,22 @@ const CreateUser = () =>{
     const [college, setCollege] = useState(null)
     const [sorority, setSorority] = useState(null)
 
+    
     function createNewUser(){
+        
         if(name===null ||  email===null || pwd===null|| phone===null|| college===null){
             alert("Fill in all the compulsory fields!")
         }
         else{
-            createUserFromData([name, email, pwd, phone, college, sorority]);
+            const userObject = {
+                "name": name,
+                "email": email,
+                "password": pwd,
+                "phone": phone,
+                "college": college,
+                "sorority": sorority
+            }
+            createUserFromData(userObject);
         }
     }
     return (

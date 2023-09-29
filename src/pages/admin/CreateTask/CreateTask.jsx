@@ -1,23 +1,44 @@
 import './CreateTask.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import createTaskFromData from '../../../backend/createTask';
+import loginStatus from '../../../backend/loginStatus';
+import { useNavigate } from 'react-router-dom';
 
 const  CreateTask = () =>{
-
+    const navigate = useNavigate()
+  useEffect(() => {
+    
+    async function checkLogin() {
+      var x = await loginStatus();
+      console.log("checking", x);
+      if(!x.isAdmin){
+        navigate('/')
+      } 
+    }
+       checkLogin();
+    }, [navigate]);
 
     const [title, setTitle] = useState(null)
     const [desc, setDesc] = useState(null)
     const [amt, setAmt] = useState(null)
     const [deadline, setDeadline] = useState(null);
     const [type, setType] = useState(null)
-    const [bulktask, setBulktask] = useState(null)
+    // const [bulktask, setBulktask] = useState(null)
 
     function createNewTask(){
-        if(title == null || desc == null || amt == null || deadline == null || type == null || bulktask == null){
+        if(title == null || desc == null || amt == null || deadline == null || type == null){
+            // createTaskFromData([title,desc,amt,deadline,type,bulktask]);
             alert("Fill in all the compulsory fields!")
         }
         else{
-            createTaskFromData([title,desc,amt,deadline,type,bulktask]);
+            const taskObject = {
+                "title": title,
+                "description": desc,
+                "amount": amt,
+                "deadline": deadline,
+                "type": type,
+            }
+            createTaskFromData(taskObject);
         }
     }
     return (
