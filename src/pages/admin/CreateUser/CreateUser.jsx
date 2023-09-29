@@ -25,7 +25,7 @@ const CreateUser = () =>{
             <section>   
                 <input type="text" className="user-input" name="name" placeholder="name" id="" onChange={(evt)=>setName(evt.target.value)}/>
                 <input type="text" className="user-input" name="email" placeholder="email" id="" onChange={(evt)=>setEmail(evt.target.value)}/>
-                <input type="text" className="user-input" name="password" placeholder="password" id="" onChange={(evt)=>setPwd(evt.target.value)}/>
+                <input type="password" className="user-input" name="password" placeholder="password" value={pwd} id="" onChange={(evt)=>setPwd(evt.target.value)}/>
                 <input type="text" className="user-input" name="phone" placeholder="phone number" id="" onChange={(evt)=>setPhone(evt.target.value)}/>
                 <input type="text" className="user-input" name="college" placeholder="college" id="" onChange={(evt)=>setCollege(evt.target.value)}/>
                 <input type="text" className="user-input" name="sorority" placeholder="sorority" id="" onChange={(evt)=>setSorority(evt.target.value)}/>

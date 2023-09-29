@@ -11,6 +11,7 @@ import TaskDetails from './pages/admin/TaskDetails/TaskDetails';
 import SubmitTask from './pages/Login/SubmitTask';
 import CreateUser from './pages/admin/CreateUser/CreateUser';
 import HomePage from './pages/Login/Home';
+import CreateTask from './pages/admin/CreateTask/CreateTask';
 
 
 
@@ -30,6 +31,7 @@ const App = () =>  {
       <Route path="/admin/usertasks" element={<UserTasks/>} />
       <Route path="/admin/taskdetails" element={<TaskDetails/>} />
       <Route path="/admin/createuser" element={<CreateUser/>}/>
+      <Route path="/admin/createtask" element={<CreateTask/>}/>
     </Routes>
 </BrowserRouter>
   );

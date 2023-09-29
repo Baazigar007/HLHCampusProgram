@@ -1,0 +1,29 @@
+.create-body{
+    height: 100vh;
+    display: flex;
+    background-color: #E48EC3;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.submit-button{
+    background-color: white;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+.user-input{
+    height: 3rem;
+}
+.user-input-desc{
+    height: 9rem;
+}
