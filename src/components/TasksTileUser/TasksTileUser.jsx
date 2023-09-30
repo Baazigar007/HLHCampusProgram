@@ -1,13 +1,13 @@
 import "./TasksTileUser.css";
 
-const TasksTileUser = () => {
+const TasksTileUser = (props) => {
   return (
     <>
       <div className="taskstilebody">
         <div>
-          <p>Task Desc</p>
-          <p>Task Amount</p>
-          <p>Task Deadline</p>
+          <p>Task Desc: {props.data.description}</p>
+          <p>Task Amount: {props.data.amount}</p>
+          <p>Task Deadline: {props.data.deadline}</p>
         </div>
       </div>
     </>

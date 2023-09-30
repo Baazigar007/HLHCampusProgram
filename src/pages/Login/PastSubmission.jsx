@@ -3,11 +3,12 @@ import avatar from '../../images/avatar.svg';
 import PastSubmissionTile from '../../components/PastSubmissionTile/PastSubmissionTile';
 import TopSheet from '../../components/TopSheet/TopSheet';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import loginStatus from '../../backend/loginStatus';
+import fetchPastTasks from '../../backend/fetchPastTasks';
 
 const PastSubmission = () => {
-    let list =[1,2,3,4];
+    const [list, setList] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
       
@@ -25,6 +26,17 @@ const PastSubmission = () => {
       }
          checkLogin();
       }, [navigate]);
+
+      useEffect(() => {
+        // logic to fetch active data
+        async function getTasks(){
+         const tasks =  await fetchPastTasks()
+         setList(tasks)
+        }
+        getTasks()
+        // const tasks  = 
+        
+      }, []);
     return(
         <>
         <div className='submitbody'>
@@ -43,7 +55,7 @@ const PastSubmission = () => {
                                   <p>No submissions!</p>
                                    ) : 
                    list.map((item) => {
-                       return <PastSubmissionTile />;
+                       return <PastSubmissionTile key={item} data={item}/>;
                     })
                    }
                        

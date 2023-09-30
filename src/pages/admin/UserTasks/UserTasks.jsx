@@ -37,13 +37,13 @@ const UserTasks = () =>{
 
             <div className="tasks-list">
                 {tasks.map((element)=>{
-                    return <TasksTile/>
+                    return <TasksTile data={element}/>
                 })}
             </div>
                 
-                <div>
+                {/* <div>
                     <button className="add-bulk-task-btn"><img src={add} className="add-bulk-task-btn-img" alt="" /></button>
-                </div>
+                </div> */}
             </div>
         </>
     )

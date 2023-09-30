@@ -7,8 +7,9 @@ const BalanceTile= (props) =>{
                 <div className="tile-right">
                     <div className="tile-info">
                         <p className="tile-info-head">Task 1</p>
-                        <p>Amount : +0$</p>
-                        <p>Comment : Rejected, Deadline not met</p>
+                        <p>Status: {props.data.status}</p>
+                        <p>Amount : +{props.data.reward}$</p>
+                        <p>Comment : {props.data.comment}</p>
                     </div>
                    
                 </div>

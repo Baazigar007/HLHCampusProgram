@@ -107,7 +107,7 @@ const AdminDashboard = () => {
           }
         </div>
         <button className="add-task-button" onClick={()=>{logoutAdmin()}}>LogOut</button>
-        <button className="add-task-button">View/Add Bulk Tasks</button>
+        <button className="add-task-button" onClick={()=>{navigate('/admin/bulktasks')}}>View/Add Bulk Tasks</button>
       </div>
       }
     </>

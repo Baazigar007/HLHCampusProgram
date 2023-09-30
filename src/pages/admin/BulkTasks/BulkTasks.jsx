@@ -3,10 +3,14 @@ import add from "../../../images/add_icon.svg"
 import "./BulkTasks.css"
 import TasksTile from "../../../components/TasksTileAdmin/TasksTile"
 import { useNavigate } from "react-router-dom"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import loginStatus from "../../../backend/loginStatus"
+import fetchAllTasks from "../../../backend/fetchAllTasks"
+import Loading from "../../../components/Loading/Loading"
 const BulkTasks = () =>{
-    const tasks = [1,2,34,5,5]
+    // const tasks = [1,2,34,5,5]
+    const [tasks, setTasks] = useState([])
+    const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
   useEffect(() => {
     
@@ -19,24 +23,36 @@ const BulkTasks = () =>{
     }
        checkLogin();
     }, [navigate]);
+
+    useEffect(()=>{
+        setLoading(true)
+       async function getData(){
+        const data = await fetchAllTasks();
+        setTasks(data)
+       }
+       getData()
+       setLoading(false)
+    })
     return (
         <>
-            <div className="bulk-task-body">
-            <img className="logo-right" src={logo} alt="" />
-            <div className="bulk-task-header">
-                <p className="add-a-bulk-task">Add a Bulk-Task for everyone!</p>
-            </div>
-
-            <div className="tasks-list">
-                {tasks.map((element)=>{
-                    return <TasksTile/>
-                })}
-            </div>
-                
-                <div>
-                    <button className="add-bulk-task-btn"><img src={add} className="add-bulk-task-btn-img" alt="" /></button>
+            {
+                loading?<Loading/>:<div className="bulk-task-body">
+                <img className="logo-right" src={logo} alt="" />
+                <div className="bulk-task-header">
+                    <p className="add-a-bulk-task">Add a Bulk-Task for everyone!</p>
                 </div>
-            </div>
+    
+                <div className="tasks-list">
+                    {tasks.map((element)=>{
+                        return <TasksTile data={element}/>
+                    })}
+                </div>
+                    
+                    <div>
+                        <button className="add-bulk-task-btn" onClick={()=>{navigate('/admin/createtask')}}><img src={add} className="add-bulk-task-btn-img" alt="" /></button>
+                    </div>
+                </div>
+            }
         </>
     )
 }

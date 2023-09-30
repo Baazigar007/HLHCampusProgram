@@ -7,9 +7,9 @@ const PastSubmissionTile= (props) =>{
                 
                 <div className="tile-right">
                     <div className="tile-info">
-                        <p>Task 1</p>
-                        <p>Status : Accepted</p>
-                        <p>Comment : Great Work!!</p>
+                        <p>{props.data.title}</p>
+                        <p>Status : {props.data.status}</p>
+                        <p>Comment : {props.data.comment}</p>
                     </div>
                    
                 </div>

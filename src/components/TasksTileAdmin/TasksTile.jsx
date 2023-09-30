@@ -1,17 +1,17 @@
 import "./TasksTile.css";
 import edit from "../../images/pencil.svg";
 
-const TasksTile = () => {
+const TasksTile = (props) => {
   return (
     <>
       <div className="taskstilebody">
         <div>
           <strong>
-            <p>Task Name 1</p>
+            <p>{props.data.title}</p>
           </strong>
-          <p>Task Desc</p>
-          <p>Task Amount</p>
-          <p>Task Deadline</p>
+          <p>Task Desc: {props.data.description}</p>
+          <p>Task Amount: {props.data.amount}</p>
+          <p>Task Deadline: {props.data.deadline}</p>
         </div>
         <div>
           <img src={edit} alt="" />
