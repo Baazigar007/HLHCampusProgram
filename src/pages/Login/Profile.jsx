@@ -7,9 +7,18 @@ import { useEffect } from "react";
 import loginStatus from "../../backend/loginStatus";
 import realm_app from "../../backend/UserContext";
 import { useState } from "react";
+import updateUserData from "../../backend/updateUserData";
+import Loading from "../../components/Loading/Loading";
 
 // PROFILE BODY
 export default function ProfilePage() {
+  const [userinfo, setUserInfo] = useState({})
+  const [name, setName] = useState(null)
+  const [email, setEmail] = useState(null)
+  const [phone, setPhone] = useState(null)
+  const [college, setCollege] = useState(null)
+  const [sorority, setSorority] = useState(null)
+  const [loading, setLoading] = useState(false)
   //navigation for logged in
   const navigate = useNavigate()
   useEffect(() => {
@@ -28,32 +37,35 @@ export default function ProfilePage() {
        checkLogin();
     }, [navigate]);
 
-//fetch start
-const [userObject, setUserObject] = useState(null);
+    useEffect(()=>{
+      const info = realm_app.currentUser.customData
+      setUserInfo(info)
+      setName(info.name)
+      setEmail(info.email)
+      setPhone(info.phone)
+      setCollege(info.college)
+      setSorority(info.sorority)
+     },[])
 
-useEffect(() => {
-  
-  if (realm_app.currentUser) {
-   
-    const usersCollection = realm_app.currentUser.mongoClient('mongodb-atlas').db('userinfo').collection('userdata');
-
-    usersCollection.findOne({ id :  realm_app.currentUser.userId})
-      .then((user) => {
-        setUserObject(user);
-        console.log("fetch done",user);
-      })
-      .catch((error) => {
-        console.error('Error fetching user data:', error);
-      });
+  function saveData(){
+    let x = userinfo
+    x.name = name;
+    x.email = email;
+    x.college = college
+    x.phone = phone
+    x.sorority = sorority
+    setUserInfo(x)
+    setLoading(true)
+    updateUserData(userinfo)
+    console.log(userinfo)
+    setLoading(false)
   }
-}, [realm_app.currentUser]);
-//fetch base end
-
 
 //return part for design and structure 
   return (
     <>
-      <div className="profilebody">
+      {
+        loading?<Loading/>:<div className="profilebody">
         <TopSheet/>
         <div className="sb-head">
           <h2>Your Profile</h2>
@@ -65,17 +77,17 @@ useEffect(() => {
             </div>
             <div className="p-info">
               <h4 className="p-head">Name</h4>
-              <input type="name " value="Jatin"></input>
+              <input type="text" value={name} onChange={(evt)=>{setName(evt.target.value)}}></input>
               <h4 className="p-head">Email Address</h4>
-              <input type="email " value="j@gmail..com"></input>
+              <input type="text" value={email} onChange={(evt)=>{setEmail(evt.target.value)}}></input>
               <h4 className="p-head">Phone</h4>
-              <input type="Phone" value="9999999999"></input>
+              <input type="text" value={phone} onChange={(evt)=>{setPhone(evt.target.value)}}></input>
               <h4 className="p-head">College</h4>
-              <input type="name " value="USICT"></input>
+              <input type="text" value={college} onChange={(evt)=>{setCollege(evt.target.value)}}></input>
               <h4 className="p-head">Soronity</h4>
-              <input type="name " value="Tech"></input>
+              <input type="text" value={sorority} onChange={(evt)=>{setSorority(evt.target.value)}}></input>
             </div>
-            <button>
+            <button onClick={()=>{saveData()}}>
               <div className="savebtn">
                 <img src={handblue} alt="" />
                 <p>Save</p>
@@ -84,6 +96,7 @@ useEffect(() => {
           </div>
         </div>
       </div>
+      }
     </>
   );
 }

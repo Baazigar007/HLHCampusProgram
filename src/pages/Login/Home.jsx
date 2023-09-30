@@ -2,12 +2,15 @@ import "./Home.css";
 import TopSheet from "../../components/TopSheet/TopSheet";
 import HomeTile from "../../components/HomeTile/HomeTile";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import loginStatus from "../../backend/loginStatus";
 import avatar from "../../images/avatar.svg";
+import realm_app from "../../backend/UserContext";
 
 export default function HomePage() {
     let list =[1,2,3];
+    const [name, setName] = useState(null)
+    
     const navigate = useNavigate()
     useEffect(() => {
       
@@ -25,7 +28,10 @@ export default function HomePage() {
       }
          checkLogin();
       }, [navigate]);
-   
+   useEffect(()=>{
+    const namee = realm_app.currentUser.customData.name
+    setName(namee)
+   },[])
     return(
         <>
         <div className='homebody'>
@@ -39,7 +45,7 @@ export default function HomePage() {
                           <img src={avatar} alt ="pfp"/>
                    </div>
                    <div>
-                    <h2 className="u-head">Hi John Dee</h2>
+                    <h2 className="u-head">Hi {name}</h2>
                    </div>
                   
                    <div className='tasks'>
