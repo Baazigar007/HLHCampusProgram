@@ -1,13 +1,14 @@
 import realm_app from "./UserContext";
 import * as Realm from "realm-web";
 
+async function createUserFromData(userObject) {
+  
 // Assuming you have a reference to your MongoDB collection
 const usersCollection = realm_app.currentUser
   .mongoClient("mongodb-atlas")
   .db("userinfo")
   .collection("userdata");
 
-async function createUserFromData(userObject) {
  await realm_app.emailPasswordAuth
     .registerUser({
       email: userObject.email,

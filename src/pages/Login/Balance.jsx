@@ -3,11 +3,13 @@ import avatar from '../../images/avatar.svg';
 import BalanceTile from '../../components/BalanceTile/BalanceTile';
 import TopSheet from '../../components/TopSheet/TopSheet';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import loginStatus from '../../backend/loginStatus';
+import realm_app from '../../backend/UserContext';
 
 
 const Balance = () =>{
+  //checked logged in
     const wallet =[1,2];
     const navigate = useNavigate()
   useEffect(() => {
@@ -26,6 +28,22 @@ const Balance = () =>{
     }
        checkLogin();
     }, [navigate]);
+
+  //setter function for bal and total earn
+  const [bal,setBal] = useState(null)
+  const [earn, setEarn] = useState(null)
+  //fetching data 
+  
+  useEffect(()=>{
+    const earned = realm_app.currentUser.customData.totalEarned
+    setEarn(earned)
+    const balance = realm_app.currentUser.customData.totalBalance
+   setBal(balance)
+    console.log(balance)
+    console.log(earned)
+
+   },[])
+
     return(
         <>
           <div className='balancebody'>
@@ -42,12 +60,12 @@ const Balance = () =>{
                    <div className='bal-info'>
                      
                       <div className='b-i-left'>
-                        <h3 className='amt-box'>$45</h3>
+                        <h3 className='amt-box'>{'$'+ earn}</h3>
                         <p className='box-head'>Total Earned</p>
                       </div>
 
                       <div className='b-i-right'>
-                        <h3 className='amt-box'>$50</h3>
+                        <h3 className='amt-box'>{'$' + bal}</h3>
                         <p className='box-head'>Balance</p>
                       </div>
 
