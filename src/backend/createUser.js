@@ -8,15 +8,12 @@ const usersCollection = realm_app.currentUser
   .collection("userdata");
 
 async function createUserFromData(userObject) {
-  realm_app.emailPasswordAuth
+ await realm_app.emailPasswordAuth
     .registerUser({
       email: userObject.email,
       password: userObject.password,
     })
-    .then((val) => console.log("val is ", val))
-    .catch((err) => {
-      alert(err);
-    });
+    
   console.log(userObject);
   const credentials = Realm.Credentials.emailPassword(
     userObject.email,
