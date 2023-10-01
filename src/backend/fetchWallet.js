@@ -10,7 +10,6 @@ const tasksCollection = realm_app.currentUser
 let pending = 0;
 let accepted = 0;
    const data = await tasksCollection.find();
-   console.log(data[0].completed_by)
   for(let i=0;i<data.length;i++){
     console.log("check ", data[i].completed_by, "  ", userid)
     if(data[i].user_id===userid){

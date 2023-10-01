@@ -5,8 +5,6 @@ const tasksCollection = realm_app.currentUser
   .mongoClient("mongodb-atlas")
   .db("taskinfo")
   .collection("taskdata");
-  
-  const userid =  await realm_app.currentUser.id;
 
   console.log(taskid)
 

@@ -65,7 +65,7 @@ export default function HomePage() {
               <p>No tasks!</p>
             ) : (
               list.map((item) => {
-                return <HomeTile key={item} data={item}/>;
+                return <HomeTile key={item._id} data={item}/>;
               })
             )}
           </div>

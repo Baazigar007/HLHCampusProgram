@@ -11,9 +11,7 @@ const CreateUser = () => {
   const [college, setCollege] = useState(null);
   const [sorority, setSorority] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  function createNewUser() {
-    setLoading(true)
+  async function createNewUser() {
     if (
       name === null ||
       email === null ||
@@ -35,16 +33,13 @@ const CreateUser = () => {
         totalEarned: 0,
         taskSubmissions: [],
       };
-      createUserFromData(userObject);
-      setName(null)
-      setEmail(null)
-      setPwd(null)
-      setPhone(null)
-      setCollege(null)
-      setSorority(null)
-      setLoading(null)
+      async function createUser(){
+        await createUserFromData(userObject)
+      }
+      setLoading(true)
+      await createUser();
+      setLoading(false)
     }
-    setLoading(false)
   }
   return (
     <>
@@ -73,12 +68,11 @@ const CreateUser = () => {
             className="user-input"
             name="password"
             placeholder="password"
-            value={pwd}
             id=""
             onChange={(evt) => setPwd(evt.target.value)}
           />
           <input
-            type="text"
+            type="tel"
             className="user-input"
             name="phone"
             placeholder="phone number"

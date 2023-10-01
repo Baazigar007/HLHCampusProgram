@@ -9,7 +9,9 @@ const TasksTile = (props) => {
           <strong>
             <p>{props.data.title}</p>
           </strong>
+          <div className="descbody">
           <p>Task Desc: {props.data.description}</p>
+          </div>
           <p>Task Amount: {props.data.amount}</p>
           <p>Task Deadline: {props.data.deadline}</p>
         </div>

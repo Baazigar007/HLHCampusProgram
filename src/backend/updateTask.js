@@ -10,9 +10,25 @@ async function updateData(taskDetails, user_id){
     .updateOne(
         { _id: taskDetails._id },
         { $set: taskDetails }
-    ).then((val)=>alert("updated data successfully! The changes will appear after you relogin")).catch((err)=>{
+    ).then((val)=>console.log("success 1")).catch((err)=>{
         alert(err)
     })
+    console.log(res)
+   
+    const newData = await realm_app.currentUser.customData;
+    delete newData._id
+    newData.taskSubmissions.push(taskDetails._id)
+    const res2 = await realm_app.currentUser
+    .mongoClient("mongodb-atlas")
+    .db("userinfo")
+    .collection("userdata")
+    .updateOne(
+        { userId: user_id },
+        { $set: newData }
+    ).then((val)=>alert("updated data successfully!")).catch((err)=>{
+        alert(err)
+    })
+    console.log(res2)
 }
 
 export default updateData;

@@ -31,7 +31,10 @@
     justify-content: center;
     z-index: 1;
 }
-
+/* 
+.modal{
+    z-index: ;
+} */
 .toggles{
     display: flex;
     justify-content: space-between;
@@ -107,4 +110,32 @@
     .taskdetails-select{
         width: 40vw;
     }
+}
+
+
+.modal-images{
+
+background-color: orange;
+height: 70%;
+overflow: scroll;
+width: 100%;
+}
+
+.modal-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+    height: 90%;
+    width: 90%;
+}
+
+.submitted-images{
+    height: 20rem;
+    width: 20rem;
+}
+
+.closebtn{
+    position: absolute;
+    right: 2rem
 }

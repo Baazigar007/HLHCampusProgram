@@ -13,11 +13,11 @@ import Loading from "../../components/Loading/Loading";
 // PROFILE BODY
 export default function ProfilePage() {
   const [userinfo, setUserInfo] = useState({})
-  const [name, setName] = useState(null)
-  const [email, setEmail] = useState(null)
-  const [phone, setPhone] = useState(null)
-  const [college, setCollege] = useState(null)
-  const [sorority, setSorority] = useState(null)
+  const [name, setName] = useState("")
+  const [email, setEmail] = useState("")
+  const [phone, setPhone] = useState("")
+  const [college, setCollege] = useState("")
+  const [sorority, setSorority] = useState("")
   const [loading, setLoading] = useState(false)
   //navigation for logged in
   const navigate = useNavigate()

@@ -1,6 +1,9 @@
 .taskstilebody{
     width: calc(90vw - 30px);
-    height: 8rem;
+    height: max-content;
+    min-height: 8rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-radius: 1rem;
     background-color: #7FC9EF;
     border: 1px solid black;
@@ -12,4 +15,9 @@
     justify-content: space-between;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+
+.descbody{
+    height: max-content;
+    line-height: 20px;
 }
