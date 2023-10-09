@@ -12,6 +12,7 @@ import SubmitTask from './pages/Login/SubmitTask';
 import CreateUser from './pages/admin/CreateUser/CreateUser';
 import HomePage from './pages/Login/Home';
 import CreateTask from './pages/admin/CreateTask/CreateTask';
+import EditTask from './pages/admin/EditTask/EditTask';
 
 
 
@@ -32,6 +33,7 @@ const App = () =>  {
       <Route path="/admin/taskdetails" element={<TaskDetails/>} />
       <Route path="/admin/createuser" element={<CreateUser/>}/>
       <Route path="/admin/createtask" element={<CreateTask/>}/>
+      <Route path="/admin/edittask" element={<EditTask/>}/>
     </Routes>
 </BrowserRouter>
   );

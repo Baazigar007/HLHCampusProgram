@@ -1,0 +1,42 @@
+.edit-body{
+    height: 80vh;
+    display: flex;
+    background-color: #E48EC3;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.submit-button{
+    background-color: white;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+.user-edit-input{
+    height: 3rem;
+}
+.user-edit-input-desc{
+    height: 3rem;
+}
+
+
+.type-drop{
+
+    color: black;
+    background-color: #7FC9EF;
+    height: 3rem;
+    border: solid black 1px;
+    border-radius: 15px;
+    width: 22rem;
+    padding: 1rem;
+    margin-left: 1rem;
+  }

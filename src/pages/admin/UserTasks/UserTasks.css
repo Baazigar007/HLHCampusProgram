@@ -17,3 +17,7 @@
 .user-task-header-r{
     margin-right: 1rem;
 }
+
+.tasks-list{
+    overflow-y: auto;
+}
