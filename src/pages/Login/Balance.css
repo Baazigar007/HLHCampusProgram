@@ -64,7 +64,7 @@
 }
 
 .bal-info{
-    margin-top: -2rem;
+    margin-top: 8rem;
     background-color:  #7FC9EF;
     border: solid black 1px;
     border-radius: 1rem;
@@ -72,6 +72,11 @@
     width: 91%;
     flex-direction: row; 
     justify-content: space-evenly;  
+}
+@media screen and (max-width: 600px) {
+    .bal-info{
+        margin-top: 2rem;
+    }
 }
 .b-i-left{
     padding-left: 1rem;

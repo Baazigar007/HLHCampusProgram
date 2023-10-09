@@ -25,6 +25,9 @@ const TopSheet = () => {
         
           <div className="sheetcontent">
             <img src={avatar} alt="" />
+            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/home')}}>
+                <p>Home</p>
+            </div>
             <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/profile')}}>
                 <p>Profile</p>
             </div>

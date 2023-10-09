@@ -151,6 +151,7 @@ async function getData(){
         </div>
         <button className="add-task-button" onClick={()=>{logoutAdmin()}}>LogOut</button>
         <button className="add-task-button" onClick={()=>{navigate('/admin/bulktasks')}}>View/Add Bulk Tasks</button>
+        <button className="add-task-button" onClick={()=>{navigate('/admin/createuser')}}>Create New User</button>
       </div>
       }
     </>

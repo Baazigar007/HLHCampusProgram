@@ -88,14 +88,23 @@ const CreateTask = () => {
               id=""
               onChange={(evt) => setDeadline(evt.target.value)}
             />
-            <input
+            {/* <input
               type="text"
               className="user-input"
               name="type"
               placeholder="Task Type"
               id=""
               onChange={(evt) => setType(evt.target.value)}
-            />
+            /> */}
+                <select
+             className="type-drop"
+             name="type"
+              id=""
+            onChange={(evt) => setType(evt.target.value)}
+            >
+            <option value="Bulk Task">Bulk Task</option>
+           <option value="Simple Task">Simple Task</option>
+            </select>
 
             <button onClick={() => createNewTask()} className="submit-button">
               Add

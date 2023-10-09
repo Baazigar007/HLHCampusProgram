@@ -5,9 +5,9 @@ const TasksTileUser = (props) => {
     <>
       <div className="taskstilebody">
         <div>
-          <p>Task Desc: {props.data.description}</p>
-          <p>Task Amount: {props.data.amount}</p>
-          <p>Task Deadline: {props.data.deadline}</p>
+        <p className="tile-desc"><b>Task Desc:</b> {props.data.description}</p>
+          <p><b>Task Amount:</b> {props.data.amount}</p>
+          <p><b>Task Deadline:</b> {props.data.deadline}</p>
         </div>
       </div>
     </>

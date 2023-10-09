@@ -13,3 +13,8 @@
     padding-left: 1rem;
     padding-right: 1rem;
 }
+.tile-desc{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 1rem;
+}

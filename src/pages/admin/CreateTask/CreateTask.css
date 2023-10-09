@@ -27,3 +27,16 @@ section{
 .user-input-desc{
     height: 9rem;
 }
+
+
+.type-drop{
+
+    color: black;
+    background-color: #7FC9EF;
+    height: 3rem;
+    border: solid black 1px;
+    border-radius: 15px;
+    width: 22rem;
+    padding: 1rem;
+    margin-left: 1rem;
+  }

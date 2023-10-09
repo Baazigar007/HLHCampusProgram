@@ -11,9 +11,9 @@ const HomeTile= (props) =>{
                 <div className="tile-right">
                     <div className="tile-info">
                         <p className="tile-head">{props.data.title}</p>
-                        <p>Desc: {props.data.description}</p>
-                        <p>Deadline: {props.data.deadline}</p>
-                        <p>Task Type: {props.data.type}</p>
+                        <p className="tile-desc"><b>Desc: </b>{props.data.description}</p>
+                        <p><b>Deadline:</b> {props.data.deadline}</p>
+                        <p><b>Task Type:</b> {props.data.type}</p>
                     </div>
                     <img src={pinkhand} alt="pink-hand-logo"></img>
                 </div>
