@@ -16,12 +16,7 @@ const AdminDashboard = () => {
   const [submissions_list, setSubmissions_list] = useState([])
   const [submissions_list_copy, setSubmissions_list_copy] = useState([])
   const [currentSchool, setCurrentSchool] = useState("all")
-  async function logoutAdmin(){
-    setLoading(true);
-    logoutUser().then(()=>{
-      navigate('/')
-    })
-  }
+ 
   async function setSchoolFilter(val){
     setCurrentSchool(val)
     console.log("val is ",val)
@@ -36,11 +31,6 @@ const AdminDashboard = () => {
       console.log("val is ", submissions_list)
     }
   }
-  function removeDuplicates(array) {
-    const set = new Set(array);
-    return Array.from(set);
-  }
-
   async function exportToCSV(){
     convertArrayOfObjectsToCSV()
   }

@@ -5,6 +5,7 @@ import loginStatus from "../../../backend/loginStatus";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
 import AdminSheet from "../../../components/AdminSheet/AdminSheet";
+import fetchAllUsers from "../../../backend/fetchAllUsers";
 
 const CreateTask = () => {
   const navigate = useNavigate();
@@ -25,6 +26,9 @@ const CreateTask = () => {
   const [deadline, setDeadline] = useState(null);
   const [type, setType] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [isSingle, setisSingle] = useState(false);
+  const [users, setUsers] = useState([])
+  const [assigned, setAssigned] = useState(null)
 
   async function createNewTask() {
     if (
@@ -36,17 +40,52 @@ const CreateTask = () => {
     ) {
       alert("Fill in all the necessary fields.");
     } else {
-      const taskObject = {
-        title: title,
-        description: desc,
-        amount: amt,
-        deadline: deadline,
-        type: type,
-      };
-      setLoading(true);
-      await createTaskFromData(taskObject);
-      alert("Task created successfully!")
-      setLoading(false);
+      if(type==="Single Task"){
+        const taskObject = {
+          title: title,
+          description: desc,
+          amount: amt,
+          deadline: deadline,
+          type: type,
+          assigned_to: assigned
+        };
+        setLoading(true);
+        await createTaskFromData(taskObject);
+        alert("Task created successfully!");
+        setLoading(false);
+      }
+      else{
+        const taskObject = {
+          title: title,
+          description: desc,
+          amount: amt,
+          deadline: deadline,
+          type: type,
+        };
+        setLoading(true);
+        await createTaskFromData(taskObject);
+        alert("Task created successfully!");
+        setLoading(false);
+      }
+      
+    }
+  }
+
+  useEffect(()=>{
+    async function getUsers(){
+      const users = await fetchAllUsers();
+      setUsers(users);
+    }
+    getUsers()
+  }, [])
+
+  async function toggleType(val){
+    setType(val)
+    if(val==="Bulk Task"){
+      setisSingle(false);
+    }
+    else{
+      setisSingle(true)
     }
   }
   return (
@@ -55,7 +94,7 @@ const CreateTask = () => {
         <Loading />
       ) : (
         <div className="create-body">
-          <AdminSheet/>
+          <AdminSheet />
           <h1>Create a new Task</h1>
           <section>
             <input
@@ -98,16 +137,33 @@ const CreateTask = () => {
               id=""
               onChange={(evt) => setType(evt.target.value)}
             /> */}
-                <select
-             className="type-drop"
-             name="type"
+            <select
+              className="type-drop"
+              name="type"
               id=""
-            onChange={(evt) => setType(evt.target.value)}
+              onChange={(evt) => toggleType(evt.target.value)}
             >
-            <option value="Bulk Task">Bulk Task</option>
-           <option value="Simple Task">Simple Task</option>
+              <option value="Bulk Task">Bulk Task</option>
+              <option value="Single Task">Single Task</option>
             </select>
-
+            {
+              isSingle?<select
+              className="type-drop"
+              name="type"
+              id=""
+              onChange={(evt) => setAssigned(evt.target.value)}
+            >
+              <option value="none">Assign to</option>
+              {
+                users.map((user)=>{
+                  if(!user.isAdmin){
+                    return  <option value={user.userId}>{user.name}</option>
+                  }
+                  return <p></p>
+                })
+              }
+            </select>:<div></div>
+            }
             <button onClick={() => createNewTask()} className="submit-button">
               Add
             </button>

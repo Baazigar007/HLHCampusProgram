@@ -12,7 +12,14 @@ const tasksCollection = realm_app.currentUser
   for(let i=0;i<data.length;i++){
     console.log("check ", data[i].completed_by, "  ", userid)
     if(!data[i].completed_by.includes(userid)){
-        filtered_data.push(data[i])
+        if(data[i].type!=="Single Task"){
+          filtered_data.push(data[i])
+        }
+        else{
+          if(data[i].assigned_to === userid){
+            filtered_data.push(data[i])
+          }
+        }
     }
   }
     console.log(data);
