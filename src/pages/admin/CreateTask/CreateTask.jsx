@@ -4,6 +4,7 @@ import createTaskFromData from "../../../backend/createTask";
 import loginStatus from "../../../backend/loginStatus";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 
 const CreateTask = () => {
   const navigate = useNavigate();
@@ -54,6 +55,7 @@ const CreateTask = () => {
         <Loading />
       ) : (
         <div className="create-body">
+          <AdminSheet/>
           <h1>Create a new Task</h1>
           <section>
             <input

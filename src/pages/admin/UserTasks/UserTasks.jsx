@@ -7,6 +7,7 @@ import loginStatus from "../../../backend/loginStatus";
 import fetchSubmissionsByUsers from "../../../backend/fetchSubmissionsByUsers";
 import fetchUserData from "../../../backend/fetchUserData";
 import Loading from "../../../components/Loading/Loading";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 
 const UserTasks = () => {
   // const tasks = [1,2,2,2,2,2,34,4]
@@ -65,7 +66,8 @@ const UserTasks = () => {
         <Loading />
       ) : (
         <div className="bulk-task-body">
-          <img className="logo-right" src={logo} alt="" />
+          <AdminSheet/>
+          {/* <img className="logo-right" src={logo} alt="" /> */}
           <div className="user-task-header">
             <div className="user-task-header-l">
               <strong>

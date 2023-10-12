@@ -8,6 +8,7 @@ import logoutUser from "../../../backend/logout";
 import Loading from "../../../components/Loading/Loading";
 import convertArrayOfObjectsToCSV from "../../../backend/convertToCSV";
 import fetchAllUsers from "../../../backend/fetchAllUsers";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 const AdminDashboard = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
@@ -68,8 +69,9 @@ async function getData(){
     <>
       {
         loading?<Loading/>:<div className="admin-dash-parent">
+          <AdminSheet/>
         <div className="topblue">
-        <img className="logo-right" src={logo} alt="" />
+        {/* <img className="logo-right" src={logo} alt="" /> */}
 
           <p className="setfilter">Set Filters:</p>
 
@@ -149,9 +151,9 @@ async function getData(){
           })
           }
         </div>
-        <button className="add-task-button" onClick={()=>{logoutAdmin()}}>LogOut</button>
+        {/* <button className="add-task-button" onClick={()=>{logoutAdmin()}}>LogOut</button>
         <button className="add-task-button" onClick={()=>{navigate('/admin/bulktasks')}}>View/Add Bulk Tasks</button>
-        <button className="add-task-button" onClick={()=>{navigate('/admin/createuser')}}>Create New User</button>
+        <button className="add-task-button" onClick={()=>{navigate('/admin/createuser')}}>Create New User</button> */}
       </div>
       }
     </>

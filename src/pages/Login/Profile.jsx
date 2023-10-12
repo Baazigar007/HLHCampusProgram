@@ -73,7 +73,7 @@ export default function ProfilePage() {
         <div className="profilebottom">
           <div className="profilefields">
             <div className="p-image">
-              <img src={avatar} alt="pfp" />
+              <img className="image" src={avatar} alt="pfp" />
             </div>
             <div className="p-info">
               <h4 className="p-head">Name</h4>

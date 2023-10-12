@@ -9,6 +9,7 @@ import fetchSubmissionDetails from "../../../backend/fetchSubmissionDetails";
 import fetchImages from "../../../backend/fetchImages";
 import updateSubmission from "../../../backend/updateSubmission";
 import Loading from "../../../components/Loading/Loading";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 
 const TaskDetails = () => {
   const [submissionId, setSubmissionId] = useState(null);
@@ -83,6 +84,7 @@ const TaskDetails = () => {
     <>
       {
         loading?<Loading/>:<div className="task-details-body">
+          <AdminSheet/>
         <div className="task-details-header">
           <div>
             <img src={avatar} className="task-details-avatar" alt="" />
@@ -119,6 +121,7 @@ const TaskDetails = () => {
               <select name="status" className="taskdetails-select" value={completionStatus} id="status" onChange={(evt)=>{setCompletionStatus(evt.target.value)}}>
                 <option value="pending">Pending</option>
                 <option value="accepted">Accepted</option>
+                <option value="rejected">Rejected</option>
               </select>
             </div>
             <div className="status-filter">

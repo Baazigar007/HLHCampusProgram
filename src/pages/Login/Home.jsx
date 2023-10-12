@@ -52,7 +52,7 @@ export default function HomePage() {
 
         <div className="h-bottom">
           <div className="p-image">
-            <img src={avatar} alt="pfp" />
+            <img className="image" src={avatar} alt="pfp" />
           </div>
           <div>
             <h2 className="u-head">Hi {name}</h2>

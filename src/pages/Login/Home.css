@@ -50,11 +50,15 @@
 .p-image{
     position: absolute;
     top: -113px;
-   
+    
+}
+.image{
+    width: 145px;
+    height: 190px;
 }
 .h-head{
-    background-color: white;
-    border-radius: 2rem;
+    /* background-color: white;
+    border-radius: 2rem; */
    padding-left: 1.5rem;
    padding-right: 1.5rem;
    position: absolute;

@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./CreateUser.css";
 import createUserFromData from "../../../backend/createUser";
 import Loading from "../../../components/Loading/Loading";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 
 const CreateUser = () => {
   const [name, setName] = useState(null);
@@ -45,6 +46,7 @@ const CreateUser = () => {
     <>
       {
         loading?<Loading/>:<div className="createuser-body">
+          <AdminSheet/>
         <h1>Create a new User</h1>
         <section>
           <input

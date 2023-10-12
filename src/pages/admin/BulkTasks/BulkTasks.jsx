@@ -7,6 +7,7 @@ import { useEffect, useState } from "react"
 import loginStatus from "../../../backend/loginStatus"
 import fetchAllTasks from "../../../backend/fetchAllTasks"
 import Loading from "../../../components/Loading/Loading"
+import AdminSheet from "../../../components/AdminSheet/AdminSheet"
 const BulkTasks = () =>{
     // const tasks = [1,2,34,5,5]
     const [tasks, setTasks] = useState([])
@@ -37,7 +38,8 @@ const BulkTasks = () =>{
         <>
             {
                 loading?<Loading/>:<div className="bulk-task-body">
-                <img className="logo-right" src={logo} alt="" />
+                    <AdminSheet/>
+                {/* <img className="logo-right" src={logo} alt="" /> */}
                 <div className="bulk-task-header">
                     <p className="add-a-bulk-task">Add a Bulk-Task for everyone!</p>
                 </div>

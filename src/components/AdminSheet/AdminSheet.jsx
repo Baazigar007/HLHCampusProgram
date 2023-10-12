@@ -1,4 +1,4 @@
-import "./TopSheet.css";
+import "./AdminSheet.css";
 import Sheet from "react-modal-sheet";
 import { useState } from "react";
 import logo from "../../images/logo.svg"
@@ -6,7 +6,7 @@ import avatar from "../../images/avatar.svg"
 import { useNavigate } from "react-router-dom";
 import logoutUser from "../../backend/logout";
 
-const TopSheet = () => {
+const AdminSheet = () => {
   async function logout(){
     logoutUser().then((_)=>{
       navigate('/')
@@ -24,18 +24,18 @@ const TopSheet = () => {
           <Sheet.Content className="sheetbody">{
         
           <div className="sheetcontent">
-            <img  className="image"  src={avatar} alt="" />
-            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/home')}}>
-                <p>Home</p>
+            {/* <img src={avatar} alt="" /> */}
+            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/admin')}}>
+                <p>Dashboard</p>
             </div>
-            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/profile')}}>
-                <p>Profile</p>
+            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/admin/bulktasks')}}>
+                <p>View Tasks</p>
             </div>
-            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/pastsubmission')}}>
-                <p>Past Submissions</p>
+            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/admin/createuser')}}>
+                <p>Create User</p>
             </div>
-            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/balance')}}>
-                <p>Balance</p>
+            <div className="sheet-tile" onClick={()=>{setOpen(false); navigate('/admin/createtask')}}>
+                <p>Create Task</p>
             </div>
 
             <div className="sheet-tile" onClick={()=>{logout()}}>
@@ -55,4 +55,4 @@ const TopSheet = () => {
   );
 };
 
-export default TopSheet;
+export default AdminSheet;

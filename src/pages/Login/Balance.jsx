@@ -71,7 +71,7 @@ const Balance = () =>{
        
             <div className='b-bottom'>
                    <div className="p-image"> 
-                          <img src={avatar} alt ="pfp"/>
+                          <img className='image' src={avatar} alt ="pfp"/>
                    </div>
 
                    <div className='bal-info'>

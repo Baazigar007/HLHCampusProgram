@@ -4,6 +4,7 @@ import loginStatus from "../../../backend/loginStatus";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../../components/Loading/Loading";
 import updateBulkTaskData from "../../../backend/updateBulkTask";
+import AdminSheet from "../../../components/AdminSheet/AdminSheet";
 
 const EditTask = (props) => {
   const navigate = useNavigate();
@@ -57,6 +58,7 @@ const EditTask = (props) => {
         <Loading />
       ) : (
         <div className="edit-body">
+          <AdminSheet/>
           <h1>Edit Task</h1>
           <section>
             <input
