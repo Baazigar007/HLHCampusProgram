@@ -8,8 +8,8 @@ delete userObject._id
     .collection("userdata").updateOne(
         { userId: id },
         { $set: userObject }
-    ).then((val)=>alert("updated data successfully! The changes will appear after you relogin")).catch((err)=>{
-        alert(err)
+    ).then((val)=>alert("Updated data successfully! The changes will appear after you relogin")).catch((err)=>{
+      alert(err + "\nPlease try again!")
     })
   console.log(res);
 }

@@ -23,4 +23,14 @@ section{
 
 .user-input{
     height: 3rem;
+    
 }
+
+.college-select{
+    width: 22rem;
+    border-radius: 0.5rem;
+height: 3rem;
+background-color: #7FC9EF;
+border: 1px solid black;
+}
+

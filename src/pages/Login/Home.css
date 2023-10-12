@@ -44,7 +44,7 @@
 
 .tasks{
     margin-top: 0rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 .p-image{

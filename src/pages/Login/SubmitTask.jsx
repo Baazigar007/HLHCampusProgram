@@ -102,7 +102,7 @@ setLoading(true)
       } 
     await  SubmitData(submitObject, imgarray);
     await  updateData(taskDetails, user_id)
-      alert("Submitted successfully");
+      alert("Task submitted successfully!");
       setLoading(false)
 
       navigate('/home')

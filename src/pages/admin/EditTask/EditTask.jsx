@@ -34,7 +34,7 @@ const EditTask = (props) => {
       amt == null ||
       deadline == null
     ) {
-      alert("Fill in all the compulsory fields!");
+      alert("Fill in all the necessary fields!");
     } else {
       const taskObject = {
         title: title,
@@ -46,7 +46,7 @@ const EditTask = (props) => {
       };
       setLoading(true);
       await updateBulkTaskData(taskObject);
-      alert("success")
+      // alert("Updated task successfully!")
       
       setLoading(false);
       alert("Value updated successfully! You may close the modal now")

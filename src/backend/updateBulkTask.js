@@ -10,7 +10,7 @@ async function updateBulkTaskData(taskObject){
         { _id: taskObject._id },
         { $set: taskObject }
     ).then((val)=>console.log("success 1")).catch((err)=>{
-        alert(err)
+        alert(err + "\nPlease try again!")
     })
     console.log(res)
 }

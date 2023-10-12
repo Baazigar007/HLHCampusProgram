@@ -1,6 +1,5 @@
 import "./AdminDashboard.css";
 import SubmissionCard from "../../../components/SubmissionCard/SubmissionCard";
-import logo from "../../../images/logo.svg"
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import loginStatus from "../../../backend/loginStatus";
@@ -9,12 +8,14 @@ import Loading from "../../../components/Loading/Loading";
 import convertArrayOfObjectsToCSV from "../../../backend/convertToCSV";
 import fetchAllUsers from "../../../backend/fetchAllUsers";
 import AdminSheet from "../../../components/AdminSheet/AdminSheet";
+import school_names from "../../Login/schooldata";
 const AdminDashboard = () => {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false);
-  const [schools, setSchools] = useState([])
+  const [schools, setSchools] = useState(school_names)
   const [submissions_list, setSubmissions_list] = useState([])
   const [submissions_list_copy, setSubmissions_list_copy] = useState([])
+  const [currentSchool, setCurrentSchool] = useState("all")
   async function logoutAdmin(){
     setLoading(true);
     logoutUser().then(()=>{
@@ -22,12 +23,17 @@ const AdminDashboard = () => {
     })
   }
   async function setSchoolFilter(val){
+    setCurrentSchool(val)
+    console.log("val is ",val)
     if(val==="all"){
       setSubmissions_list(submissions_list_copy);
     }
     else{
       const filteredArray = submissions_list.filter((object) => object.college === val);
-      setSubmissions_list(filteredArray)
+     await setSubmissions_list(filteredArray)
+      // setSubmissions_list(filteredArray)
+      console.log("val is ", filteredArray)
+      console.log("val is ", submissions_list)
     }
   }
   function removeDuplicates(array) {
@@ -42,7 +48,7 @@ const AdminDashboard = () => {
     setLoading(true)
     async function checkLogin() {
       var x = await loginStatus();
-      console.log("checking", x);
+      // console.log("checking", x);
       if(!x.isAdmin){
         navigate('/')
       }
@@ -53,12 +59,12 @@ async function getData(){
   let schools = []
   setSubmissions_list(data)
   setSubmissions_list_copy(data)
-  for(let index in submissions_list){
-    schools.push(submissions_list[index].college)
-  }
-  const schoolset = removeDuplicates(schools)
-  console.log("school set ", schoolset)
-  setSchools(schoolset)
+  // for(let index in submissions_list){
+  //   schools.push(submissions_list[index].college)
+  // }
+  // const schoolset = removeDuplicates(schools)
+  // console.log("school set ", schoolset)
+  // setSchools(schoolset)
 }
        checkLogin();
        getData()
@@ -101,11 +107,11 @@ async function getData(){
               <br />
               <select name="status" id="status" onChange={(evt)=>{setSchoolFilter(evt.target.value)}}>
                 <option value="all">All</option>
-                {/* {
+                {
                   schools.map((element)=>{
                     return <option value={element}>{element}</option>
                   })
-                } */}
+                }
               </select>
             </div>
 {/* 
@@ -134,8 +140,9 @@ async function getData(){
             </div>
           </div>
         </div>
-        <div className="submission-parent">
-          <div className="submissions">
+
+        <div className="submission-parent-admin">
+          <div className="submissions-admin">
             <p>Users</p>
           </div>
         </div>
@@ -144,7 +151,7 @@ async function getData(){
             <p>No submissions!</p>
           ) : 
           submissions_list.map((item) => {
-            if(!item.isAdmin){
+            if(!item.isAdmin && (item.college==currentSchool || currentSchool==="all")){
               return <SubmissionCard data={item} key={item._id}/>;
             }
             return <div></div>

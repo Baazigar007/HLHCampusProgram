@@ -13,7 +13,7 @@ async function updateSubmission(submission){
         { _id: data_id },
         { $set: submission }
     ).then((val)=>console.log("success")).catch((err)=>{
-        alert(err)
+        alert(err + "\nPlease try again!")
     })
     console.log(res)
    

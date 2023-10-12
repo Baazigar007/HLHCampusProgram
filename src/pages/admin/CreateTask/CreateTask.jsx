@@ -34,7 +34,7 @@ const CreateTask = () => {
       deadline == null ||
       type == null
     ) {
-      alert("Fill in all the compulsory fields!");
+      alert("Fill in all the necessary fields.");
     } else {
       const taskObject = {
         title: title,
@@ -45,7 +45,7 @@ const CreateTask = () => {
       };
       setLoading(true);
       await createTaskFromData(taskObject);
-      alert("success")
+      alert("Task created successfully!")
       setLoading(false);
     }
   }

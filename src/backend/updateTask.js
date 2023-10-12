@@ -11,7 +11,7 @@ async function updateData(taskDetails, user_id){
         { _id: taskDetails._id },
         { $set: taskDetails }
     ).then((val)=>console.log("success 1")).catch((err)=>{
-        alert(err)
+        alert(err + "\nPlease try again!")
     })
     console.log(res)
    
@@ -25,8 +25,8 @@ async function updateData(taskDetails, user_id){
     .updateOne(
         { userId: user_id },
         { $set: newData }
-    ).then((val)=>alert("updated data successfully!")).catch((err)=>{
-        alert(err)
+    ).then((val)=>alert("Updated data successfully!")).catch((err)=>{
+        alert(err + "\nPlease try again!")
     })
     console.log(res2)
 }

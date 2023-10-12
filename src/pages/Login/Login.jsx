@@ -21,7 +21,7 @@ export default function LoginPage() {
 
 
     if (email === null || pwd === null) {
-      alert("Fill in all the required fields!");
+      alert("Fill in all the necessary fields!");
     } else {
       login(email, pwd)
         .then((_) => {
@@ -31,7 +31,7 @@ export default function LoginPage() {
         })
         .catch((error) => {
           console.log(error.error);
-          alert(error.error);
+          alert(error.error + "\nPlease try again!");
           setLoading(false);
         });
     }

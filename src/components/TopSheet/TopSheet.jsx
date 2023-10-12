@@ -43,7 +43,7 @@ const TopSheet = () => {
             </div>
 
 
-            <button className="closebtn" onClick={()=>{setOpen(false)}}>close</button>
+            <button className="closebtn" onClick={()=>{setOpen(false)}}> close </button>
          
 
           </div>

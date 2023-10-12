@@ -27,7 +27,7 @@ const usersCollection = realm_app.currentUser
     .insertOne(userObject)
     .then(() => {
       console.log("User data inserted into MongoDB");
-      alert("User created with id ", user.id, " and data pushed successfully!")
+      alert("New user is created with id:- ", user.id, ".\nData is uploaded successfully!")
     })
     .catch((error) => {
       console.error("Error inserting user data:", error);

@@ -40,7 +40,7 @@ const TaskDetails = () => {
     setLoading(true)
     const res = await updateSubmission(data)
     console.log(res)
-    alert("successful")
+    alert("Updated the task submission successfully!")
     // console.log(res)
     setLoading(false)
     console.log(data)

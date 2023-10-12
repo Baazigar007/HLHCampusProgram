@@ -33,28 +33,31 @@ const Balance = () =>{
     }, [navigate]);
 
   //setter function for bal and total earn
-  const [bal,setBal] = useState(null)
-  const [earn, setEarn] = useState(null)
+  const [bal,setBal] = useState(0)
+  const [earn, setEarn] = useState(0)
   //fetching data 
   
   useEffect(()=>{
-    console.log(realm_app.currentUser.customData)
-    const earned = realm_app.currentUser.customData.totalEarned.$numberInt
-    setEarn(earned)
-    const balance = realm_app.currentUser.customData.balance.$numberInt
-   setBal(balance)
-    console.log(balance)
-    console.log(earned)
+  //   console.log(realm_app.currentUser.customData)
+  //   const earned = realm_app.currentUser.customData.totalEarned.$numberInt
+  //   setEarn(earned)
+  //   const balance = realm_app.currentUser.customData.balance.$numberInt
+  //  setBal(balance)
+  //   console.log(balance)
+  //   console.log(earned)
 
    },[])
-
+   
    useEffect(() => {
     // logic to fetch active data
     async function getTasks(){
      const res =  await fetchWallet()
-     setWallet(res[0])
-     setPending(res[1])
-     setAccepted(res[2])
+    await setWallet(res[0])
+    await setPending(res[1])
+    await setAccepted(res[2])
+    await setBal(res[3])
+    await setEarn(res[4])
+   
     }
     getTasks()
     // const tasks  = 
@@ -105,7 +108,7 @@ const Balance = () =>{
                                   <p>No Rewards!</p>
                                    ) : 
                    wallet.map((item) => {
-                       return <BalanceTile key={item} data={item}/>;
+                       return <BalanceTile key={item._id} data={item}/>;
                     })
                    }
                    

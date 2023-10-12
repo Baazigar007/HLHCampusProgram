@@ -2,7 +2,6 @@ import realm_app from "./UserContext";
 
 async function fetchUserData(id) {
     console.log("user data getting")
-    // alert("pahucha")
 const userCollection = realm_app.currentUser
   .mongoClient("mongodb-atlas")
   .db("userinfo")
