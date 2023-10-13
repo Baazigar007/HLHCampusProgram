@@ -31,6 +31,7 @@
 }
 
 .campus-text{
+    padding-bottom: 2rem;
     height: 50vh;
     width: 100vw;
     background-color: #7FC9EF;
@@ -86,6 +87,8 @@
     }
     .campus-text{
         font-size: 1.5rem;
+        padding-bottom: 0rem;
+       
         /* font-family: serif; */
     }
 }

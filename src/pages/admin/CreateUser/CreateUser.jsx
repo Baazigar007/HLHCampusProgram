@@ -24,7 +24,7 @@ const CreateUser = () => {
       phone === null ||
       college === null
     ) {
-      alert("Fill in all the necessary fields!");
+      alert("Fill in all the necessary fields in correct format!");
     } else {
       const userObject = {
         name: name,
@@ -69,7 +69,16 @@ const CreateUser = () => {
               name="email"
               placeholder="email"
               id=""
-              onChange={(evt) => setEmail(evt.target.value)}
+              onChange={(evt) => {
+                const input = evt.target.value;
+                const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i; 
+                if (emailPattern.test(input)) {
+                
+                  setEmail(input);
+                }
+                
+                // If it's not a valid email, you can choose to ignore it or display an error message.
+              }}
             />
             <input
               type="password"
@@ -85,7 +94,18 @@ const CreateUser = () => {
               name="phone"
               placeholder="phone number"
               id=""
-              onChange={(evt) => setPhone(evt.target.value)}
+              onChange={(evt) => {
+                const input = evt.target.value;
+              
+                const phonePattern = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+            
+                if (phonePattern.test(input)) {
+                 
+                  setPhone(input);
+                }
+             
+                // If it's not a valid phone number, you can choose to ignore it or display an error message.
+              }}
             />
 
             <div className="">

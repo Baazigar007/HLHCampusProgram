@@ -119,7 +119,18 @@ const CreateTask = () => {
               name="amt"
               placeholder="Amount"
               id=""
-              onChange={(evt) => setAmt(evt.target.value)}
+              onChange={(evt) => {
+                const input = evt.target.value;
+              
+                if (/^[0-9]*$/.test(input)) {
+                 
+                  setAmt(input);
+                }
+                else{
+                  alert("Fill numeric value");
+                }
+               
+              }}
             />
             <input
               type="date"
@@ -129,14 +140,7 @@ const CreateTask = () => {
               id=""
               onChange={(evt) => setDeadline(evt.target.value)}
             />
-            {/* <input
-              type="text"
-              className="user-input"
-              name="type"
-              placeholder="Task Type"
-              id=""
-              onChange={(evt) => setType(evt.target.value)}
-            /> */}
+         
             <select
               className="type-drop"
               name="type"
@@ -145,6 +149,12 @@ const CreateTask = () => {
             >
               <option value="Bulk Task">Bulk Task</option>
               <option value="Single Task">Single Task</option>
+              <option value="Social Media Task">Social Media</option>
+              <option value="Inperson Task">In-person</option>
+              <option value="Seminar Task">Seminar</option>
+              <option value="PopUpShop Task">PopUpShop</option>
+              <option value="Bonus Task">Bonus</option>
+           
             </select>
             {
               isSingle?<select

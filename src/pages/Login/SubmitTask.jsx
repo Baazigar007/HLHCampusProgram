@@ -9,6 +9,7 @@ import realm_app from "../../backend/UserContext";
 import fetchSingleTask from "../../backend/fetchSingleTask";
 import updateData from "../../backend/updateTask";
 import Loading from "../../components/Loading/Loading";
+import Topsheet from "../../components/TopSheet/TopSheet";
 
 const SubmitTask = () =>{
   //checked logged in 
@@ -114,6 +115,7 @@ setLoading(true)
         <>
         {
           loading?<Loading/>:<div className="submit-task-body">
+            <Topsheet/>
           <div className="submit-task-header">
               <p>{taskDetails.title}</p>
           </div>

@@ -33,3 +33,8 @@
     transform: rotate(-70deg); /* Adjust the angle as needed */
   
 }
+.closebtn{
+    position: absolute;
+    right: 2rem;
+    top:-1rem;
+}

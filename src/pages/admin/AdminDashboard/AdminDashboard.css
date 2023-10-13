@@ -67,6 +67,7 @@
     flex-direction: column;
     flex: start;
     align-items: center;
+    padding-bottom: 3rem;
 }
 
 .add-task-button{

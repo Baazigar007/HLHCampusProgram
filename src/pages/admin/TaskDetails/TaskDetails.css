@@ -135,7 +135,8 @@ width: 100%;
     width: 20rem;
 }
 
-.closebtn{
+.close-btn{
     position: absolute;
-    right: 2rem
+    right: 2rem;
+    /* top:-1rem; */
 }

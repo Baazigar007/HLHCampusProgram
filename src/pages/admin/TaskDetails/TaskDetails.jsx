@@ -165,7 +165,7 @@ const TaskDetails = () => {
           </div>
         </div>
         <Modal isOpen={isOpen} onClose={closeModal}>
-          <button className="closebtn" onClick={()=>{setIsOpen(false)}}>close</button>
+          <button className="close-btn" onClick={()=>{setIsOpen(false)}}>close</button>
           <br /><br />
           {
             images.map((image)=>{
