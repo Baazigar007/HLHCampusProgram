@@ -1,0 +1,35 @@
+.edituser-body{
+    display: flex;
+    background-color: #E48EC3;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.submit-button{
+    background-color: white;
+    font-size: 1.2rem;
+    width: 10rem;
+    height: 3rem;
+}
+
+.user-input{
+    height: 3rem;
+    
+}
+
+.college-select{
+    width: 22rem;
+    border-radius: 0.5rem;
+height: 3rem;
+background-color: #7FC9EF;
+border: 1px solid black;
+}
+

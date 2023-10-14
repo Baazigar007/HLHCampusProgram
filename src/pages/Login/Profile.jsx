@@ -47,18 +47,28 @@ export default function ProfilePage() {
       setSorority(info.sorority)
      },[])
 
-  function saveData(){
+     function is_10_digit_string(string) {
+      return string.length === 10 && string.match(/^\d{10}$/) !== null;
+    }
+async  function saveData(){
     let x = userinfo
-    x.name = name;
-    x.email = email;
-    x.college = college
-    x.phone = phone
-    x.sorority = sorority
-    setUserInfo(x)
-    setLoading(true)
-    updateUserData(userinfo)
-    console.log(userinfo)
-    setLoading(false)
+    if(!is_10_digit_string(phone)){
+      alert("Phone number is not correctly formatted!")
+      setLoading(false)
+    }
+    else{
+      x.name = name;
+      x.email = email;
+      x.college = college
+      x.phone = phone
+      x.sorority = sorority
+      await setUserInfo(x)
+      await setLoading(true)
+      await updateUserData(userinfo)
+      console.log(userinfo)
+      setLoading(false)
+    }
+    
   }
 
 //return part for design and structure 
@@ -79,12 +89,12 @@ export default function ProfilePage() {
               <h4 className="p-head">Name</h4>
               <input type="text" value={name} onChange={(evt)=>{setName(evt.target.value)}}></input>
               <h4 className="p-head">Email Address</h4>
-              <input type="text" value={email} onChange={(evt)=>{setEmail(evt.target.value)}}></input>
+              <input type="email" value={email} onChange={(evt)=>{setEmail(evt.target.value)}}></input>
               <h4 className="p-head">Phone</h4>
-              <input type="text" value={phone} onChange={(evt)=>{setPhone(evt.target.value)}}></input>
+              <input type="tel" value={phone} onChange={(evt)=>{setPhone(evt.target.value)}}></input>
               <h4 className="p-head">College</h4>
               <input type="text" value={college} onChange={(evt)=>{setCollege(evt.target.value)}}></input>
-              <h4 className="p-head">Soronity</h4>
+              <h4 className="p-head">Sorority</h4>
               <input type="text" value={sorority} onChange={(evt)=>{setSorority(evt.target.value)}}></input>
             </div>
             <button onClick={()=>{saveData()}}>

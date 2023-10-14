@@ -1,5 +1,6 @@
 import TasksTile from "../../../components/TasksTileAdmin/TasksTile";
 import logo from "../../../images/logo.svg";
+import edit from "../../../images/pencil.svg";
 import "./UserTasks.css";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -8,9 +9,17 @@ import fetchSubmissionsByUsers from "../../../backend/fetchSubmissionsByUsers";
 import fetchUserData from "../../../backend/fetchUserData";
 import Loading from "../../../components/Loading/Loading";
 import AdminSheet from "../../../components/AdminSheet/AdminSheet";
+import Modal from 'react-modal';
+import EditUser from "../EditUser/EditUser";
 
 const UserTasks = () => {
   // const tasks = [1,2,2,2,2,2,34,4]
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const [loading, setLoading] = useState(false);
   const [submissions, setSubmissions] = useState([]);
   const [userData, setUserData] = useState({
@@ -83,9 +92,9 @@ const UserTasks = () => {
                 Sorority : {userData.sorority}
               </p>
             </div>
-            {/* <div className="user-task-header-r">
-    <img src={edit} alt="" />
-  </div> */}
+            <div className="user-task-header-r">
+    <img src={edit} alt="" onClick={()=>{setIsOpen(true)}} />
+  </div>
           </div>
 
           <div className="tasks-list">
@@ -113,6 +122,15 @@ const UserTasks = () => {
         </div> */}
         </div>
       )}
+      <Modal
+        style={{"content": {"backgroundColor": "#E48EC3", }}}
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Edit Task Modal"
+      >
+        <EditUser data={userData}/>
+       {/* <EditTask data={props.data}/> */}
+      </Modal>
     </>
   );
 };

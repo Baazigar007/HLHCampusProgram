@@ -37,6 +37,9 @@ const TaskDetails = () => {
     else if(completionStatus==="accepted" && completionStatus!==data.status){
       data.status = "accepted"
     }
+    else if(completionStatus==="rejected" && completionStatus!==data.status){
+      data.status = "rejected"
+    }
     setLoading(true)
     const res = await updateSubmission(data)
     console.log(res)
