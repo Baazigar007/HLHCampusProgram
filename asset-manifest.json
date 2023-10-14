@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/HLHCampusProgram/static/css/main.52aeff8e.css",
+    "main.js": "/HLHCampusProgram/static/js/main.a80d925f.js",
+    "static/js/787.66d99a66.chunk.js": "/HLHCampusProgram/static/js/787.66d99a66.chunk.js",
+    "static/media/logotext.svg": "/HLHCampusProgram/static/media/logotext.a1cd40424b513d0e98d0b32430cd01e6.svg",
+    "static/media/logo.svg": "/HLHCampusProgram/static/media/logo.9dc2fc4865723c7705a6000b0b9d647b.svg",
+    "static/media/hand-pink.svg": "/HLHCampusProgram/static/media/hand-pink.a32c8f6bf102374c6f46ede75b84b9fe.svg",
+    "static/media/hand-blue.svg": "/HLHCampusProgram/static/media/hand-blue.acc0c1627ed867b0296bcbc51e21f343.svg",
+    "static/media/hand-yellow.svg": "/HLHCampusProgram/static/media/hand-yellow.ccc0be7e78439260c07d50bb1ba1bfc2.svg",
+    "static/media/avatar.svg": "/HLHCampusProgram/static/media/avatar.f625ec348b15e27984266beef79f6e8c.svg",
+    "static/media/pencil.svg": "/HLHCampusProgram/static/media/pencil.8215f89fb83732fd9f66636923f02de3.svg",
+    "static/media/add_icon.svg": "/HLHCampusProgram/static/media/add_icon.c446f6255a0ea7bb36efb8c07bf7ae7b.svg",
+    "index.html": "/HLHCampusProgram/index.html",
+    "main.52aeff8e.css.map": "/HLHCampusProgram/static/css/main.52aeff8e.css.map",
+    "main.a80d925f.js.map": "/HLHCampusProgram/static/js/main.a80d925f.js.map",
+    "787.66d99a66.chunk.js.map": "/HLHCampusProgram/static/js/787.66d99a66.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.52aeff8e.css",
+    "static/js/main.a80d925f.js"
+  ]
+}
